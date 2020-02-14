@@ -1,0 +1,49 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+article{
+    min-height: 100%;
+}
+
+header {
+    background-color: #8f2aa3;
+    color: #ff0081;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer {
+    background-color: #8f2aa3;
+    color: #ff0081;
+    position: fixed;
+    bottom: 0;
+    width: 100%;   
+}
+
+.sectionClass {
+    
+}
+
+.divClass {
+    height: 100%;
+}
+
+.container {
+    border: 4px solid #ff0081;
+    height: 500px;
+    width: 45%;
+    overflow: scroll;
+}
+
+.footerSectionClass {
+   
+}
+
