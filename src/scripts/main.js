@@ -1,4 +1,5 @@
 import eventEventListeners from "./events/eventListeners.js"
+import messageBoxEventListeners from "./messages/eventListeners.js"
 
 /*
     Import all the tools into main.js that are needed to display
@@ -29,5 +30,5 @@ In enim odit repellat maxime harum eum expedita fuga vel eaque quaerat optio hic
 document.querySelector("#containerOne").innerHTML = `<h1>${message}</h1>`
 
 eventEventListeners.openEvents()
+messageBoxEventListeners.openEvents()
 
-console.log(message)
