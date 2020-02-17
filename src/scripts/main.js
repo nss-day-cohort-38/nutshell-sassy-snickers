@@ -1,4 +1,4 @@
-import taskEventListeners from "./tasks/eventListeners.js"
+import eventEventListeners from "./events/eventListeners.js"
 
 /*
     Import all the tools into main.js that are needed to display
@@ -28,6 +28,6 @@ In enim odit repellat maxime harum eum expedita fuga vel eaque quaerat optio hic
 
 document.querySelector("#containerOne").innerHTML = `<h1>${message}</h1>`
 
-eventEventListeners.openTask()
+eventEventListeners.openEvents()
 
 console.log(message)

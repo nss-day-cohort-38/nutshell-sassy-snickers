@@ -1,5 +1,5 @@
 const eventEventListeners = {
-    openTask() {
+    openEvents() {
         const eventLink = document.querySelector("#eventBtnId")
 
         eventLink.addEventListener("click", () => {
