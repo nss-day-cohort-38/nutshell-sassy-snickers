@@ -1,4 +1,6 @@
+import events from './tasks/eventListeners.js'
 import eventEventListeners from "./events/eventListeners.js"
+import render from './tasks/render.js'
 
 /*
     Import all the tools into main.js that are needed to display
@@ -30,4 +32,7 @@ document.querySelector("#containerOne").innerHTML = `<h1>${message}</h1>`
 
 eventEventListeners.openEvents()
 
-console.log(message)
+
+render.renderAllTasks()
+events.addSaveBtnListener()
+
