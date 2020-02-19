@@ -19,8 +19,10 @@ const welcomeEvents = {
   validateLogin(users) {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
+    let validCheck = false
     users.forEach(user => {
       if (user.username === username.value && user.password === password.value) {
+        validCheck = true
         sessionStorage.setItem("user", user.id);
         welcomeDOM.renderHeader();
         events.openEvents();
@@ -28,10 +30,11 @@ const welcomeEvents = {
         welcomeEvents.profileBtnEvent();
         eventEventListeners.openEvents();
         messageBoxEventListeners.openEvents();
-      } else {
-        alert("Username or Password is wrong")
       }
-    });
+    })
+    if (!validCheck){
+      alert("Username or password is wrong")
+    }
   },
   getProfile(userId) {
     authAPI.getSpecificUser(userId).then(welcomeDOM.renderProfile);
