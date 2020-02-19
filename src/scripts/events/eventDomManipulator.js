@@ -1,4 +1,6 @@
 import eventHtml from "./eventHtmlMaker.js"
+import eventAPI from "./eventAPI.js"
+import eventEventListeners from "./eventListeners.js"
 
 const eventContainer = document.querySelector("#containerTwo")
 
@@ -39,9 +41,11 @@ const eventDomRender = {
          userId: currentUserId,
          eventName: newEventName.value,
          date: newEventDate.value,
-         location: newEventLocation.value
+         location: newEventLocation.value,
+         id: hiddenId.value
         }
-
+        
+        if(hiddenId.value === "") {
         eventAPI.addEventEntry(saveEventModule)
         .then(() => {
             eventAPI.getEventList()
@@ -50,6 +54,32 @@ const eventDomRender = {
                 eventDomRender.renderNewEventBtn()
                 eventEventListeners.addEvent()
             })
+        })} else {eventAPI.editEventEntry(saveEventModule)
+                    .then(() => {
+                        eventAPI.getEventList()
+                            .then(entry => {
+                                eventDomRender.renderEvent(entry)
+                                eventDomRender.renderNewEventBtn()
+                                eventEventListeners.addEvent()
+                })
+            })
+        }
+    }, 
+
+    editEventForm(editId) {
+        const currentUserId = document.querySelector(".hiddenUID")
+        const hiddenId = document.querySelector(".hiddenId")
+        const newEventName = document.querySelector("#eventNameInput")
+        const newEventDate = document.querySelector("#dateInput")
+        const newEventLocation = document.querySelector("#locationInput")
+
+        eventAPI.getEventEdit(editId)
+        .then(event => {
+         currentUserId.value = event.userId,
+         newEventName.value = event.eventName,
+         newEventDate.value = event.date,
+         newEventLocation.value = event.location
+         hiddenId.value = event.id
         })
     }
 }

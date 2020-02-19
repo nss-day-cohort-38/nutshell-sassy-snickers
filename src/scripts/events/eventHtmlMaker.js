@@ -3,13 +3,14 @@
 const eventHtml = {
     makeEventList(event) {
         return `
-        <article class="eventListClass" id="">
+        <section class="eventListClass" id="">
             <h2>${event.eventName}</h2>
             <p>${event.date}</P>
             <p>${event.location}</p>
+
             <button id="eventEditBtn--${event.id}">Edit</button>
             <button id="eventDeleteBtn--${event.id}">Delete</button>
-        </article>
+        </section>
         `        
     },
 
@@ -24,8 +25,9 @@ const eventHtml = {
         <fieldset>
             <input type="text" id="eventNameInput" placeholder="Event Name">
             <input type="date" id="dateInput" placeholder="Date">
-            <input type="text" id="locationInput" placeholder="Location">
-            <input type="hidden" id="" class="hiddenId">
+            <input type="text" id="locationInput" placeholder="Location" >
+            <input type="hidden" id="" class="hiddenId" value="">
+            <input type="hidden" id="" value="" class="hiddenUID">
             <button id="eventSaveBtnId">Save</button>
         </fieldset>
         `

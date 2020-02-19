@@ -12,12 +12,7 @@ const eventEventListeners = {
                 eventDomRender.renderNewEventBtn()
                 eventEventListeners.addEvent()
                 eventEventListeners.modifyEvents()
-            }
-                )
-            // .then(eventDomRender.renderNewEventBtn)
-            // .then(this.addEvent().bind(eventEventListeners))
-            // .then(() => eventEventListeners.addEvent())
-            console.log("Hello World")
+            })
         })
     },
 
@@ -36,7 +31,6 @@ const eventEventListeners = {
         saveEventBtn.addEventListener("click", () => {
           eventDomRender.saveEventForm()
 
-            console.log(saveEventModule)
         })
     },
 
@@ -46,6 +40,7 @@ const eventEventListeners = {
         const listenToDom = document.querySelector("#containerTwo")
         listenToDom.addEventListener("click", () => {
             if (event.target.id.startsWith("eventDeleteBtn--")) {
+               if( confirm("Are you Sure?")) {
                 const deleteBtn = event.target.id
                 const deleteArray = deleteBtn.split("--")
                 const deleteId = deleteArray[1]
@@ -55,9 +50,18 @@ const eventEventListeners = {
                     eventDomRender.renderEvent(data)
                     eventDomRender.renderNewEventBtn()
                     eventEventListeners.addEvent()
-                    eventEventListeners.modifyEvents()})
+                    eventEventListeners.modifyEvents()})}
+                    else {return}
                 console.log("delete")
             } else if (event.target.id.startsWith("eventEditBtn--")) {
+                const editBtn = event.target.id
+                const editArray = editBtn.split("--")
+                const editId = editArray[1]
+                if (event.target.id.startsWith("eventEditBtn--")) {
+                    eventDomRender.renderEventInput()
+                    eventDomRender.editEventForm(editId)
+                    eventEventListeners.saveEvent()
+                }
                 console.log("edit")
             }
         })

@@ -1,6 +1,7 @@
 const eventAPI = {
     getEventList() {
-        return fetch("http://localhost:8088/events").then(resp => resp.json())
+        return fetch("http://localhost:8088/events")
+        .then(resp => resp.json())
     },
 
     addEventEntry(entry) {
@@ -18,8 +19,19 @@ const eventAPI = {
         method: "DELETE"})
     },
 
-    editEventEntry(entry) {
+    getEventEdit(entry) {
+        return fetch(`http://localhost:8088/events/${entry}`)
+        .then(resp => resp.json())
+    },
 
+    editEventEntry(entry) {
+        return fetch(`http://localhost:8088/events/${entry.id}`, {
+            method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entry)
+        })
     }
 }
 

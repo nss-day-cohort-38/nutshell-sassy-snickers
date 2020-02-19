@@ -32,6 +32,8 @@ header {
 }
 
 main {
+    /* background: url("../logo.png");
+    background-size: 100px 100px; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -43,6 +45,10 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;   
+}
+
+button {
+    margin: 5px;
 }
 
 .logo {
@@ -87,6 +93,19 @@ footer {
     overflow-y: scroll;
     margin-top: 60px;
     /* scrollbar-color: var(--blackColor) var(--pinkColor); */
+}
+
+#containerTwo > :first-child {
+    background-color: var(--goldColor);
+    color: var(--blackColor);
+    font-size: larger;
+    font-weight: bold;
+}
+
+.eventListClass {
+    min-height: 172px;
+    margin-left: 3%;
+    color: var(--whiteColor); 
 }
 
 .footerSectionClass {
