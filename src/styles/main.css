@@ -112,11 +112,26 @@ button {
     /* scrollbar-color: var(--blackColor) var(--pinkColor); */
 }
 
-#containerTwo > :first-child {
+#loginForm {
     background-color: var(--goldColor);
     color: var(--blackColor);
     font-size: larger;
     font-weight: bold;
+    border: 10px dotted orange;
+    margin-left: 1em;
+    margin-top: 1em;
+    height: 84%;
+}
+
+#regForm {
+    background-color: var(--goldColor);
+    color: var(--blackColor);
+    font-size: larger;
+    font-weight: bold;
+    border: 10px dotted orange;
+    margin-left: 1em;
+    margin-top: 1em;
+    height: 84%;
 }
 
 .eventListClass {
@@ -135,5 +150,39 @@ button {
     margin-top: 5px;
     border: 2px solid var(--pinkColor);
     background-color: var(--blackColor);
+    color: var(--whiteColor);
+}
+
+.synthShell {
+    font-size: 60px;
+    margin-top: 0;
+    font-family: fantasy;
+}
+
+.shellType {
+    color: var(--pinkColor);
+}
+
+#login {
+    background-color: var(--purpleColor);
+    color: var(--goldColor);
+    border: none;
+    font-size: larger;
+}
+
+#login:hover {
+    background-color: var(--pinkColor);
+    color: var(--whiteColor);
+}
+
+#registerAccount {
+    background-color: var(--purpleColor);
+    color: var(--goldColor);
+    border: none;
+    font-size: larger;
+}
+
+#registerAccount:hover {
+    background-color: var(--pinkColor);
     color: var(--whiteColor);
 }

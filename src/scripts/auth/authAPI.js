@@ -4,6 +4,10 @@ export default {
         return fetch(usersUrl)
             .then(resp => resp.json())
     },
+    getSpecificUser(id) {
+        return fetch(`${usersUrl}/${id}`)
+            .then(resp => resp.json())
+    },
     addNewUser(user) {
         return fetch(usersUrl, {
             method: "POST",
