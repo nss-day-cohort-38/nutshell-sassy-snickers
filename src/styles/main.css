@@ -11,6 +11,7 @@ html, body {
     height: 100%;
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -60,8 +61,24 @@ footer {
     color: var(--pinkColor);
 }
 
-.sectionClass {
-    
+.deleteButton {
+    background-color: var(--blackColor);
+    color: var(--goldColor);
+    border: none;
+}
+
+.deleteButton:hover {
+    color: var(--pinkColor);
+}
+
+.editButton {
+    background-color: var(--blackColor);
+    color: var(--goldColor);
+    border: none;
+}
+
+.editButton:hover {
+    color: var(--pinkColor);
 }
 
 .divClass {
@@ -89,7 +106,14 @@ footer {
     /* scrollbar-color: var(--blackColor) var(--pinkColor); */
 }
 
-.footerSectionClass {
-   
+.message {
+    color: var(--pinkColor)
 }
 
+#chatBox {
+    margin-left: 5px;
+    margin-top: 5px;
+    border: 2px solid var(--pinkColor);
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
+}

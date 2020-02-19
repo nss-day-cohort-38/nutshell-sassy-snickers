@@ -14,7 +14,6 @@ const messageFactories = {
         return `
         <textarea name="chatBox" id="chatBox" placeholder="Write a new message" cols="60" rows="4"></textarea> 
         <input type="hidden" id="messageId" value="0" />`
-
     },
 
     messagesBox: document.querySelector("#containerOne")
