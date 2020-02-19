@@ -15,6 +15,8 @@ html, body {
 }
 
 body {
+    background: url("https://ak4.picdn.net/shutterstock/videos/1024082474/thumb/1.jpg");
+    background-size: 1000px 1000px; 
     background-color: var(--blackColor);
     color: var(--whiteColor);
 }
@@ -33,8 +35,7 @@ header {
 }
 
 main {
-    /* background: url("../logo.png");
-    background-size: 100px 100px; */
+   
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -112,19 +113,32 @@ button {
     /* scrollbar-color: var(--blackColor) var(--pinkColor); */
 }
 
-#containerTwo > :first-child {
-    background-color: var(--goldColor);
-    color: var(--blackColor);
+#containerTwoSection > :first-child {
+    /* background-color: var(--goldColor); */
+    /* color: var(--blackColor); */
+    border: 4px solid var(--goldColor);
     font-size: larger;
     font-weight: bold;
 }
 
 .eventListClass {
     min-height: 172px;
+    margin-top: 3%;
     margin-left: 3%;
+    margin-right: 3%;
     color: var(--whiteColor); 
 }
 
+.eventBtnClass {
+    background-color: var(--blackColor);
+    color: var(--pinkColor);
+    border: none;
+    font-size: large;
+}
+
+.eventBtnClass:hover {
+    color: var(--purpleColor);
+}
    
 .message {
     color: var(--pinkColor)
