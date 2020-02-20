@@ -13,3 +13,5 @@ const friendAPI = {
         })
     }
 }
+
+export default friendAPI
