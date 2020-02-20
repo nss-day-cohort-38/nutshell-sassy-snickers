@@ -66,7 +66,7 @@ const messageBoxEventListeners = {
       let isMe = false;
       friendAPI.getFriends().then(friends => {
         friends.forEach(friend => {
-          if (friend.loggedInUserId === sessionStorage.getItem("user")) {
+          if (friend.loggedInUserId === Number(sessionStorage.getItem("user"))) {
             if (friend.user.username === msgUser) {
               isFriend = true;
             }

@@ -1,7 +1,7 @@
 const friendHtml = {
-    friendTest() {
+    friendList(friend) {
         return `
-            <h2>I has friend!!!!!</h2>
+            <h2>${friend.user.username}</h2>
         `
     },
 
