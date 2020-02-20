@@ -14,6 +14,7 @@ const welcomeEvents = {
     loginBtn.addEventListener("click", welcomeEvents.login);
     const registerBtn = document.querySelector("#registerAccount");
     registerBtn.addEventListener("click", welcomeEvents.register);
+     
   },
   register() {
     const regUsernameInput = document.querySelector("#regUsername")
@@ -26,12 +27,15 @@ const welcomeEvents = {
       email: regEmailInput.value,
       password: regPasswordInput.value,
       confirmPassword: regConfirmPasswordInput.value
-  }
+    }
 
+    if (newUserEntry.password === newUserEntry.confirmPassword) {
     apiActions.addNewUser(newUserEntry)
       .then(apiActions.getUsers)
       .then(welcomeEvents.makeNewUser)
-      
+    } else {
+      alert("Passwords do not match")
+    }
   },    
   makeNewUser(users) {
     

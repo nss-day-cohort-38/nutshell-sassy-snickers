@@ -8,7 +8,8 @@ const messageFactories = {
         ${this.element("h1", `${message.timestamp}`, "messageTimestamp")}
         <button type="button" class="deleteButton" id="deleteMessage--${message.id}">Delete</button>
         <button type="button" class="editButton" id="editMessage--${message.id}">Edit</button>
-        </section>`
+        </section>
+        `
     },
         makeInputBox () {
         return `
