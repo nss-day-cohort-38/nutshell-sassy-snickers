@@ -82,7 +82,7 @@ const messageBoxEventListeners = {
               } else if (user.username === msgUser) {
                 const newFriend = {
                   userId: user.id,
-                  loggedInUserId: sessionStorage.getItem("user")
+                  loggedInUserId: Number(sessionStorage.getItem("user"))
                 }
                 if (!isMe) {
                   if (confirm(`Add ${msgUser} as friend?`)) {
