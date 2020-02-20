@@ -2,7 +2,7 @@ import API from './api.js'
 import render from './render.js'
 import htmlFactory from './htmlFactory.js';
 
-const events = {
+const taskEvents = {
     // Opens the task link button
     openTasks() {
         const tasksButton = document.querySelector("#taskBtnId");
@@ -94,4 +94,4 @@ const events = {
 //     }
 // }
 
-export default events
+export default taskEvents

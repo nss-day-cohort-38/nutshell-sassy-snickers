@@ -1,3 +1,19 @@
+## Instructions for project installation
+
+1. First, clone down the project files from here using the git terminal command: (git clone https://github.com/nss-day-cohort-38/nutshell-sassy-snickers)
+
+2. Find the file location of the recently pulled down project in the terminal.
+
+3. To get a database setup cd into the api folder and type "touch database.json" into the terminal.
+
+4. Then, start a JSON server. To do this, cd into the api folder and type "json-server -p 8088 -w database.json".
+
+5. After the json server has started, go back to the root project file and type "hs -o" to start an HTTP server to display the content.
+
+6. Once the page is loaded, register a new account to start to using the site.
+
+7. You can click on the tabs in the header to display different content. Enter data into the fields to get new data to be saved.
+
 # Nutshell: The Information Dashboard
 
 ## Setup: Follow these steps exactly
