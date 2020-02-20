@@ -23,7 +23,7 @@ const messageBoxEventListeners = {
           if (hideyId.value === "0") {
             const stamp = new Date();
             const newMessage = {
-              userId: sessionStorage.getItem("user"),
+              userId: Number(sessionStorage.getItem("user")),
               message: input.value,
               timestamp: stamp.toLocaleString()
             };

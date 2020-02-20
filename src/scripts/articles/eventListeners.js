@@ -55,7 +55,8 @@ export default {
                         title: titleInput.value,
                         synopsis: synopsisInput.value,
                         url: urlInput.value,
-                        timestamp: currentTime
+                        timestamp: currentTime,
+                        userId: Number(sessionStorage.getItem("user"))
                     }
 
                     apiActions.updateNewsEntry(entryIdToEdit, entry)
@@ -81,7 +82,8 @@ export default {
                         title: titleInput.value,
                         synopsis: synopsisInput.value,
                         url: urlInput.value,
-                        timestamp: currentTime
+                        timestamp: currentTime,
+                        userId: Number(sessionStorage.getItem("user"))
                     }
 
                     apiActions.addNewsEntry(entry)
