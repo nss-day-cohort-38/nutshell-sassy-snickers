@@ -3,7 +3,7 @@ import events from "../articles/eventListeners.js";
 import eventEventListeners from "../events/eventListeners.js";
 import messageBoxEventListeners from "../messages/eventListeners.js";
 import apiActions from "./authAPI.js"
-
+import taskEvents from "../tasks/eventListeners.js"
 import welcomeDOM from "./authDOM.js";
 import friendListeners from "../friends/eventListeners.js";
 
@@ -49,7 +49,7 @@ const welcomeEvents = {
     eventEventListeners.openEvents();
     messageBoxEventListeners.openEvents();
     friendListeners.openFriends();
-
+    taskEvents.openTasks()
     // registerBtn.addEventListener("click", welcomeEvents.register);
   },
   login() {
@@ -70,6 +70,7 @@ const welcomeEvents = {
         eventEventListeners.openEvents();
         messageBoxEventListeners.openEvents();
         friendListeners.openFriends();
+        taskEvents.openTasks()
       }
     })
     if (!validCheck){
