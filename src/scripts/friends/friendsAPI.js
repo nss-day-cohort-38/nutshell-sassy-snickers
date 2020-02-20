@@ -12,10 +12,6 @@ const friendAPI = {
             body: JSON.stringify(newFriend)
         })
     }
-<<<<<<< HEAD
 }
 
 export default friendAPI
-=======
-}
->>>>>>> master
