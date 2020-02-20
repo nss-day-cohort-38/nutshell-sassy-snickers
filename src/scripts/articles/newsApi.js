@@ -1,3 +1,9 @@
+/*
+    Written by Matthew B
+    API calls for getting news entries, adding new entries,
+    updating entries, and deleting entries
+*/
+
 const newsUrl = "http://localhost:8088/news"
 
 export default {
