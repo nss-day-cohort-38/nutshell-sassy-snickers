@@ -1,6 +1,8 @@
-import events from './tasks/eventListeners.js'
+import events from "./tasks/eventListeners.js"
 import eventEventListeners from "./events/eventListeners.js"
 import messageBoxEventListeners from "./messages/eventListeners.js"
+import htmlFactory from "./tasks/htmlFactory.js";
+import render from "./tasks/render.js";
 
 /*
     Import all the tools into main.js that are needed to display
@@ -11,4 +13,7 @@ import messageBoxEventListeners from "./messages/eventListeners.js"
 
 eventEventListeners.openEvents()
 messageBoxEventListeners.openEvents()
+
+events.openTasks()
+
 

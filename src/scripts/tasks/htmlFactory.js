@@ -6,17 +6,24 @@ const htmlFactory = {
         <p>Due Date: ${taskResult.expectedDate}</p>
         <button id="delete--${taskResult.id}" class="delete_btn">Delete</button>
         <button id="edit--${taskResult.id}" class="edit_btn">Edit</button>
+        <input type="checkbox" id="cb--${taskResult.id}" label="Completed"/>
     </section>
     `
     },
-    // inputForm() {
-    //     return`
-    //         <fieldset>
-    //             <input type="text" id="taskName" placeholder="Task: ">
-    //             <input type="date" id="dueDate" placeholder="Date: ">
-    //             <button Id="saveButtonId>Save</button>
-    //         </fieldset>
-    //         `
-    // }
+    addButton() {
+        return `
+        <button id="addBtn" class="add_button">New Task</button>
+    `
+    },
+    inputForm() {
+        return `
+            <fieldset>
+                <input type="hidden" id="taskId" value="" />
+                <input type="text" id="taskName" placeholder="Task: ">
+                <input type="date" id="dueDate" placeholder="Date: ">
+                <button Id="saveButtonId">Save</button>
+            </fieldset>
+            `
+    }
 }
 export default htmlFactory

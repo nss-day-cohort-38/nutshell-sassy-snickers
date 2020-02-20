@@ -5,14 +5,21 @@ import events from './eventListeners.js'
 const tasksContainer = document.querySelector("#containerTwo");
 
 const render = {
-  renderAllTasks() {
-    API.getAllTasks()
-      .then(tasks => {
-        tasksContainer.innerHTML = "";
-        tasks.forEach(task => tasksContainer.innerHTML += htmlFactory(task))
-        events.addDeleteBtnListeners();
-      })
-  }
+    renderTasks() {
+        API.getTasks()
+            .then(tasks => {
+                tasksContainer.innerHTML = "";
+                tasks.forEach(task => tasksContainer.innerHTML += htmlFactory.formResult(task))
+
+                tasksContainer.innerHTML += htmlFactory.addButton()
+                events.openForm()
+                events.addDeleteBtnListener();
+                events.addEditButtonListener();
+            })
+    },
+    renderForm() {
+        tasksContainer.innerHTML += htmlFactory.inputForm()
+    }
 }
 
 export default render
