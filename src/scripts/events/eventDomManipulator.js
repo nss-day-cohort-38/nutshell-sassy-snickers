@@ -2,13 +2,15 @@ import eventHtml from "./eventHtmlMaker.js"
 import eventAPI from "./eventAPI.js"
 import eventEventListeners from "./eventListeners.js"
 
-const eventContainer = document.querySelector("#containerTwo")
+let eventContainer = ""
 
-const eventDomRender = {
+const eventDomRender = {    
     
     renderEvent(events) {
-        
-        eventContainer.innerHTML = ""
+        const domContainer = document.querySelector("#containerTwo")
+        domContainer.innerHTML = `<section id="containerTwoSection"></section>`
+        eventContainer = document.querySelector("#containerTwoSection")
+        // eventContainer.innerHTML = ""
         events.sort((a, b) => {
             if (a.date < b.date) {return -1} 
             else if (a.date > b.date) {return 1}

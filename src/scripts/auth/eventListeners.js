@@ -5,6 +5,7 @@ import messageBoxEventListeners from "../messages/eventListeners.js";
 import apiActions from "./authAPI.js"
 
 import welcomeDOM from "./authDOM.js";
+import friendListeners from "../friends/eventListeners.js";
 
 const welcomeEvents = {
   startWelcome() {
@@ -47,6 +48,7 @@ const welcomeEvents = {
     welcomeEvents.profileBtnEvent()
     eventEventListeners.openEvents();
     messageBoxEventListeners.openEvents();
+    friendListeners.openFriends();
 
     // registerBtn.addEventListener("click", welcomeEvents.register);
   },
@@ -67,6 +69,7 @@ const welcomeEvents = {
         welcomeEvents.profileBtnEvent();
         eventEventListeners.openEvents();
         messageBoxEventListeners.openEvents();
+        friendListeners.openFriends();
       }
     })
     if (!validCheck){
