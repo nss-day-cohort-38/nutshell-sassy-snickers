@@ -6,7 +6,7 @@ const tasksContainer = document.querySelector("#containerTwo");
 
 const render = {
     renderTasks() {
-        API.getTasks()
+        API.getTasks() 
             .then(tasks => {
                 tasksContainer.innerHTML = "";
                 tasks.forEach(task => tasksContainer.innerHTML += htmlFactory.formResult(task))
@@ -19,7 +19,12 @@ const render = {
     },
     renderForm() {
         tasksContainer.innerHTML += htmlFactory.inputForm()
+    },
+    renderEditForm(id) {
+        tasksContainer.innerHTML += htmlFactory.inputForm(id)
     }
 }
 
 export default render
+
+// I'm targeting "getTasks" in the API file

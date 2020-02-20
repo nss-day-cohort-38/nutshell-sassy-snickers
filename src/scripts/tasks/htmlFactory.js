@@ -15,10 +15,10 @@ const htmlFactory = {
         <button id="addBtn" class="add_button">New Task</button>
     `
     },
-    inputForm() {
+    inputForm(id) {
         return `
-            <fieldset>
-                <input type="hidden" id="taskId" value="" />
+            <fieldset id="taskForm">
+                <input type="hidden" id="taskId" value="${id}" />
                 <input type="text" id="taskName" placeholder="Task: ">
                 <input type="date" id="dueDate" placeholder="Date: ">
                 <button Id="saveButtonId">Save</button>

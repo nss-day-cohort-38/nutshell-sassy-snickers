@@ -1,5 +1,6 @@
 const baseURL = "http://localhost:8088";
 
+// All of my fetch calls needed in order to retrieve data
 const API = {
     getTasks() {
         return fetch(`${baseURL}/Tasks`)
@@ -20,13 +21,13 @@ const API = {
         })
     },
     editTask(task) {
-        return fetch(`${baseURL}/Tasks/${task.id}`), {
+        return fetch(`${baseURL}/Tasks/${task.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(task)
-        }
+        }).then(response => response.json())
     }
 }
 

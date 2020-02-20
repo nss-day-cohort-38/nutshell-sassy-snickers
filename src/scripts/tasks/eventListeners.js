@@ -22,17 +22,30 @@ const events = {
     },
     // Saves new task from form from post
     addPostListener() {
+        const hiddenInput = document.querySelector("#taskId");
         const nameInput = document.querySelector("#taskName");
         const dueDateInput = document.querySelector("#dueDate");
         const saveButton = document.querySelector("#saveButtonId");
 
         saveButton.addEventListener("click", (event) => {
-            const newTaskObject = {
-                "task": nameInput.value,
-                "expectedDate": dueDateInput.value,
-            }
-            API.addNewTask(newTaskObject)
+            console.log(hiddenInput.value)
+            if (hiddenInput.value == "undefined")  {
+                const newTaskObject = {
+                    "task": nameInput.value,
+                    "expectedDate": dueDateInput.value
+                }
+                API.addNewTask(newTaskObject)
                 .then(render.renderTasks)
+
+            } else {
+                const editedTaskObject = {
+                    "id": parseInt(hiddenInput.value),
+                    "task": nameInput.value,
+                    "expectedDate": dueDateInput.value,
+                }
+                API.editTask(editedTaskObject)
+                .then(render.renderTasks)
+            }
         })
     },
     addDeleteBtnListener() {
@@ -47,24 +60,23 @@ const events = {
             })
         })
     },
-    addEditButtonListener(taskId) {
-        const hiddenTaskId = document.querySelector("#taskId")
-        const taskNameInput = document.querySelector("#taskName")
-        const taskDateInput = document.querySelector("#dueDate")
-        const baseURL = "http://localhost:8088";
+    addEditButtonListener() {
+        const editButtons = document.getElementsByClassName("edit_btn");
+        const buttonsArray = Array.from(editButtons)
 
-        fetch(`${baseURL}/Tasks/${taskId}`)
-            .then(response => response.json())
-            .then(task => {
-                hiddenTaskId.value = task.id
-                taskNameInput.value = task.task
-                taskDateInput.value = task.expectedDate
+        buttonsArray.forEach(button => {
+            button.addEventListener("click", (event) => {
+                const taskId = event.target.id.split("--")[1]
+                render.renderEditForm(taskId)
+                this.addPostListener()
             })
+        })
     },
-    addSaveEventListener = () => {
+    addSaveEventListener: () => {
         const saveButton = document.querySelector("#saveTask");
 
         saveButton.addEventListener("click", () => {
+            const entryIdToEdit = event.target.id.split("--")
             const hiddenTaskId = document.querySelector("#taskId")
             const taskNameInput = document.querySelector("#taskName")
             const taskDateInput = document.querySelector("#dueDate")
@@ -73,16 +85,13 @@ const events = {
                 name: taskInput.value,
                 date: taskInput.value
             };
-            // task.id = parseInt(taskIdInput.value);
-            // apiActions.updateTasks(task)
-                .then(() => {
-                    apiActions.getTasks()
-                        .then(renderTasks)
-                });
-            }
-        }
-
+            API.editTask()
+                .then(render.renderTasks)
+        });
     }
 }
+
+//     }
+// }
 
 export default events
