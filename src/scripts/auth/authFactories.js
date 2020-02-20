@@ -2,13 +2,13 @@ const authFactory = {
     welcomeHeader () {
         return `
         <img src="logo.png" alt="" class="logo">
-        <h2>Welcome to Synthshell</h2>`
+        <h2 class="synthShell">Welcome to Synth<span class="shellType">Shell</span></h2>`
     },
     loggedHeader () {
         return `
         <img src="logo.png" alt="" class="logo">
-        <button class="linkBtn">Logout</button>
- 	    <button class="linkBtn">Profile</button>
+        <button class="linkBtn" id="profileBtn">Profile</button>
+ 	    <button class="linkBtn" id="friendsBtn">Friends</button>
         <button class="linkBtn" id="newsBtn">News</button>
         <button class="linkBtn" id="messageBtnId">Messages</button>
         <button class="linkBtn" id="eventBtnId">Events</button>
@@ -17,7 +17,7 @@ const authFactory = {
     },
     loginForm () {
         return `
-        <fieldset>
+        <fieldset id="loginForm">
             <label for="username">Username: </label><br>
             <input type="text" name="username" id="username" placeholder=Username><br>
             <label for="password">Password: </label><br>
@@ -27,18 +27,26 @@ const authFactory = {
     },
     regForm () {
         return `
-        <fieldset>
+        <fieldset id="regForm">
             <label for="username">Username: </label><br>
             <input type="text" name="username" id="regUsername" placeholder="Username"><br>
             <label for="email">Email: </label><br>
-            <input type="text" name="email" id="email" placeholder=Email><br>
+            <input type="text" name="email" id="regEmail" placeholder=Email><br>
             <label for="password">Password: </label><br>
             <input type="password" name="password" id="regPassword" placeholder=Password><br>
             <label for="confirmPassword">Confirm Password: </label><br>
-            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"><br>
+            <input type="password" name="confirmPassword" id="regConfirmPassword" placeholder="Confirm Password"><br>
             <button type="button" id="registerAccount">Register</button>
         </fieldset>`
     },
+    getProfile (user) {
+        return `
+        <h1>${user.username}</h1>
+        <h1>${user.email}</h1>
+        <h1>${user.password}</h1>
+        <button id="logoutBtn">Logout</button>
+        `
+    }, 
 
     header: document.querySelector(".headerClass"),
     box1: document.getElementById("containerOne"),

@@ -16,6 +16,11 @@ const welcomeDOM = {
     renderHeader () {
         welcomeDOM.clearPage()
         authFactory.header.innerHTML = authFactory.loggedHeader()
+    },
+    renderProfile (user) {
+        authFactory.box1.innerHTML = authFactory.getProfile(user)
+        const logoutBtn = document.querySelector("#logoutBtn")
+        logoutBtn.addEventListener("click", welcomeEvents.startWelcome)
     }
 }
 
