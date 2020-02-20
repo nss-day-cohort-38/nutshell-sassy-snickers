@@ -41,9 +41,9 @@ const authFactory = {
     },
     getProfile (user) {
         return `
-        <h1>${user.username}</h1>
-        <h1>${user.email}</h1>
-        <h1>${user.password}</h1>
+        <h1>Username: ${user.username}</h1>
+        <h1>Email: ${user.email}</h1>
+        <h1>Password: ${user.password}</h1>
         <button id="logoutBtn">Logout</button>
         `
     }, 
