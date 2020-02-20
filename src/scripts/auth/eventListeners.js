@@ -2,6 +2,7 @@ import authAPI from "./authAPI.js";
 import events from "../articles/eventListeners.js";
 import eventEventListeners from "../events/eventListeners.js";
 import messageBoxEventListeners from "../messages/eventListeners.js";
+import apiActions from "./authAPI.js"
 
 import welcomeDOM from "./authDOM.js";
 
@@ -12,6 +13,38 @@ const welcomeEvents = {
     loginBtn.addEventListener("click", welcomeEvents.login);
     const registerBtn = document.querySelector("#registerAccount");
     registerBtn.addEventListener("click", welcomeEvents.register);
+  },
+  register() {
+    const regUsernameInput = document.querySelector("#regUsername")
+    const regEmailInput = document.querySelector("#regEmail")
+    const regPasswordInput = document.querySelector("#regPassword")
+    const regConfirmPasswordInput = document.querySelector("#regConfirmPassword")
+
+    const newUserEntry = {
+      username: regUsernameInput.value,
+      email: regEmailInput.value,
+      password: regPasswordInput.value,
+      confirmPassword: regConfirmPasswordInput.value
+  }
+
+    apiActions.addNewUser(newUserEntry)
+      .then(apiActions.getUsers)
+      .then(welcomeEvents.makeNewUser)
+      
+  },    
+  makeNewUser(users) {
+    
+    users.forEach(user => {
+      sessionStorage.setItem("user", user.id)
+    })
+    welcomeDOM.renderHeader();
+    events.openEvents();
+    events.entryEventListener();
+    welcomeEvents.profileBtnEvent()
+    eventEventListeners.openEvents();
+    messageBoxEventListeners.openEvents();
+
+    // registerBtn.addEventListener("click", welcomeEvents.register);
   },
   login() {
     authAPI.getUsers().then(welcomeEvents.validateLogin);

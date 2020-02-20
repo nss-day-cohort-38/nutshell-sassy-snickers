@@ -31,11 +31,11 @@ const authFactory = {
             <label for="username">Username: </label><br>
             <input type="text" name="username" id="regUsername" placeholder="Username"><br>
             <label for="email">Email: </label><br>
-            <input type="text" name="email" id="email" placeholder=Email><br>
+            <input type="text" name="email" id="regEmail" placeholder=Email><br>
             <label for="password">Password: </label><br>
             <input type="password" name="password" id="regPassword" placeholder=Password><br>
             <label for="confirmPassword">Confirm Password: </label><br>
-            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"><br>
+            <input type="password" name="confirmPassword" id="regConfirmPassword" placeholder="Confirm Password"><br>
             <button type="button" id="registerAccount">Register</button>
         </fieldset>`
     },

@@ -16,5 +16,8 @@ export default {
             },
             body: JSON.stringify(user)
         })
+    },
+    retrieveUser(userId) {
+        return fetch(usersUrl)
     }
 }
