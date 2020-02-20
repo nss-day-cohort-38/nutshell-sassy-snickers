@@ -37,7 +37,7 @@ const eventEventListeners = {
     modifyEvents() {
         // const editBtn = document.querySelector("#eventEditBtn")
         // const deleteBtn = document.querySelector("#eventDeleteBtn")
-        const listenToDom = document.querySelector("#containerTwo")
+        const listenToDom = document.querySelector("#containerTwoSection")
         listenToDom.addEventListener("click", () => {
             if (event.target.id.startsWith("eventDeleteBtn--")) {
                if( confirm("Are you Sure?")) {

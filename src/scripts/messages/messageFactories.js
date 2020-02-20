@@ -10,7 +10,7 @@ const messageFactories = {
         <button type="button" class="editButton" id="editMessage--${message.id}">Edit</button>
         </section>`
     },
-    makeInputBox () {
+        makeInputBox () {
         return `
         <textarea name="chatBox" id="chatBox" placeholder="Write a new message" cols="60" rows="4"></textarea> 
         <input type="hidden" id="messageId" value="0" />`
