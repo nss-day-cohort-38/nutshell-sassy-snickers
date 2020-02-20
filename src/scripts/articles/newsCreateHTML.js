@@ -1,4 +1,10 @@
+/*
+    Written by Matthew B
+    Creates HTML for the news article layout, adding a new article, and edit article
+*/
+
 export default {
+    // How the articles will render to the DOM
     newsFactory: (news) => `
         <section class="news">
             <h1>${news.title}</h1>
@@ -10,6 +16,7 @@ export default {
             <button id="deleteEntry--${news.id}">Delete Entry</button>
         </section>
     `,
+    // Form for how new news articles are added
     addNewsArticle: () => `
         <fieldset>
             <label for="title">Title: </label><br>
@@ -21,6 +28,7 @@ export default {
             <button id="addEntry">Add Entry</button>
         </fieldset>
     `,
+    // Form for how news articles are edited
     newsFormFactory: () => `
         <form>
             <label for="title">Title: </label><br>
